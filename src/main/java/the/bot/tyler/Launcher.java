@@ -17,7 +17,7 @@ public class Launcher {
 
     public static void main(String[] args) {
         try {
-           jda = new JDABuilder(AccountType.BOT).setToken("NDkzOTE1NDMyMjY1MTg3MzM1.Dor6pw.VXF-8qPIG23xhW7m4-W_1ewgexk").build();
+           jda = new JDABuilder(AccountType.BOT).setToken("").build();
         } catch (LoginException e) {
             e.printStackTrace();
         }
