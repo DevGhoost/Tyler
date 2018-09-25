@@ -14,12 +14,16 @@ public class McServerIcon extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split(" ");
         if (args[0].equalsIgnoreCase(Launcher.prefix + "servericon")) {
-            EmbedBuilder embed = new EmbedBuilder();
-            embed.setTitle("<:tnt:493944495554166795> **|** " + args[1]);
-            embed.setColor(Color.ORANGE);
-            embed.setImage(new MinecraftAPI().getServerIconUrl(args[1]));
-            event.getChannel().sendMessage(event.getAuthor().getAsMention()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
+            if (args.lenght = 2) {
+                EmbedBuilder embed = new EmbedBuilder();
+                embed.setTitle("<:tnt:493944495554166795> **|** " + args[1]);
+                embed.setColor(Color.ORANGE);
+                embed.setImage(new MinecraftAPI().getServerIconUrl(args[1]));
+                event.getChannel().sendMessage(event.getAuthor().getAsMention()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+            } else {
+                   event.getChannel().sendMessage(event.getAuthor().getAsMention() + ", digite um ip!").queue();
+            }
         }
     }
 }
