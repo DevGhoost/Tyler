@@ -13,7 +13,8 @@ public class McHead extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split(" ");
-        if (args[0].equalsIgnoreCase(Launcher.prefix + "head")) {
+        if (args[0].equalsIgnoreCase(Launcher.prefix + "cabeca") || args[0].equalsIgnoreCase(Launcher.prefix + "cabeça")) {
+            if (args.lenght == 2){ 
 
                 EmbedBuilder embed = new EmbedBuilder();
                 embed.setTitle("<:tnt:493944495554166795> **|** Cabeça de " + args[1]);
@@ -21,7 +22,10 @@ public class McHead extends ListenerAdapter {
                 embed.setImage(new MinecraftAPI().getHeadUrl(args[1]));
                 event.getChannel().sendMessage(event.getAuthor().getAsMention()).queue();
                 event.getChannel().sendMessage(embed.build()).queue();
-
+                
+            } else {
+                event.getChannel().sendMessage(event.getAuthor().getAsMention() + ", digite o nick do jogador desejado!").queue();
+               }
             }
 
         }
