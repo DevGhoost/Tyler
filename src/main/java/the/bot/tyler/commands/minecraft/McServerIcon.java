@@ -22,7 +22,7 @@ public class McServerIcon extends ListenerAdapter {
                 event.getChannel().sendMessage(event.getAuthor().getAsMention()).queue();
                 event.getChannel().sendMessage(embed.build()).queue();
             } else {
-                   event.getChannel().sendMessage(event.getAuthor().getAsMention() + ", digite um ip!").queue();
+                   event.getChannel().sendMessage(event.getAuthor().getAsMention() + " **|** digite um ip!").queue();
             }
         }
     }
