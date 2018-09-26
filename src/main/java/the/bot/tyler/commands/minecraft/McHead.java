@@ -24,7 +24,7 @@ public class McHead extends ListenerAdapter {
                 event.getChannel().sendMessage(embed.build()).queue();
                 
             } else {
-                event.getChannel().sendMessage(event.getAuthor().getAsMention() + ", digite o nick do jogador desejado!").queue();
+                event.getChannel().sendMessage(event.getAuthor().getAsMention() + "| Digite o nick do jogador desejado!").queue();
                }
              }
 
